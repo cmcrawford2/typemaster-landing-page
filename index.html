@@ -28,7 +28,7 @@
       <button class="header--button">Pre-order now</button>
     </header>
     <main>
-      <div class="block1--container">
+      <section class="block1--container">
         <div class="block1">
           <h1>Typemaster keyboard</h1>
           <p>
@@ -60,8 +60,8 @@
           src="assets/shared/pattern-square.svg"
           alt="square"
         />
-      </div>
-      <div class="block2--container">
+      </section>
+      <section class="block2--container">
         <div class="two-image-block">
           <img
             class="hidden box-on-left"
@@ -87,8 +87,8 @@
             reliable wireless connectivity.
           </p>
         </div>
-      </div>
-      <div class="block3--container">
+      </section>
+      <section class="block3--container">
         <div class="block3 block3-el1">
           <div class="block3--image-container">
             <img
@@ -149,53 +149,56 @@
             low light conditions.
           </p>
         </div>
-      </div>
+      </section>
     </main>
     <footer class="copyright">
       <p><span>Typemaster 2023 </span>| All Rights Reserved</p>
     </footer>
-  </body>
-  <script>
-    window.addEventListener("load", () => {
-      const mobileKeyboard = document.querySelector(".keyboard-image-mobile");
-      const tabletKeyboard = document.querySelector(".keyboard-image-tablet");
-      const desktopKeyboard = document.querySelector(".keyboard-image-desktop");
-      const phoneKeyboard = document.querySelector(".phone-keyboard-image");
-      const glassKeyboard = document.querySelector(".glass-keyboard-image");
-      const boxOnRight = document.querySelector(".box-on-right");
-      const boxOnLeft = document.querySelector(".box-on-left");
 
-      function swapImages() {
-        // For the main image. set all to hidden and unhide the relevant one.
-        // For the other two, swap the source of the image.
-        mobileKeyboard.classList.add("hidden");
-        tabletKeyboard.classList.add("hidden");
-        desktopKeyboard.classList.add("hidden");
-        boxOnRight.classList.add("hidden");
-        boxOnLeft.classList.add("hidden");
+    <script>
+      window.addEventListener("load", () => {
+        const mobileKeyboard = document.querySelector(".keyboard-image-mobile");
+        const tabletKeyboard = document.querySelector(".keyboard-image-tablet");
+        const desktopKeyboard = document.querySelector(
+          ".keyboard-image-desktop"
+        );
+        const phoneKeyboard = document.querySelector(".phone-keyboard-image");
+        const glassKeyboard = document.querySelector(".glass-keyboard-image");
+        const boxOnRight = document.querySelector(".box-on-right");
+        const boxOnLeft = document.querySelector(".box-on-left");
 
-        if (window.innerWidth >= 1200) {
-          // 55rem
-          desktopKeyboard.classList.remove("hidden");
-          phoneKeyboard.src = "assets/desktop/image-phone-and-keyboard.jpg";
-          glassKeyboard.src = "assets/desktop/image-glass-and-keyboard.jpg";
-          boxOnRight.classList.remove("hidden");
-          boxOnLeft.classList.remove("hidden");
-        } else if (window.innerWidth >= 768) {
-          // 35rem
-          tabletKeyboard.classList.remove("hidden");
-          phoneKeyboard.src = "assets/tablet/image-phone-and-keyboard.jpg";
-          glassKeyboard.src = "assets/tablet/image-glass-and-keyboard.jpg";
-        } else {
-          mobileKeyboard.classList.remove("hidden");
-          phoneKeyboard.src = "assets/mobile/image-phone-and-keyboard.jpg";
-          glassKeyboard.src = "assets/mobile/image-glass-and-keyboard.jpg";
+        function swapImages() {
+          // For the main image. set all to hidden and unhide the relevant one.
+          // For the other two, swap the source of the image.
+          mobileKeyboard.classList.add("hidden");
+          tabletKeyboard.classList.add("hidden");
+          desktopKeyboard.classList.add("hidden");
+          boxOnRight.classList.add("hidden");
+          boxOnLeft.classList.add("hidden");
+
+          if (window.innerWidth >= 1200) {
+            // 55rem
+            desktopKeyboard.classList.remove("hidden");
+            phoneKeyboard.src = "assets/desktop/image-phone-and-keyboard.jpg";
+            glassKeyboard.src = "assets/desktop/image-glass-and-keyboard.jpg";
+            boxOnRight.classList.remove("hidden");
+            boxOnLeft.classList.remove("hidden");
+          } else if (window.innerWidth >= 768) {
+            // 35rem
+            tabletKeyboard.classList.remove("hidden");
+            phoneKeyboard.src = "assets/tablet/image-phone-and-keyboard.jpg";
+            glassKeyboard.src = "assets/tablet/image-glass-and-keyboard.jpg";
+          } else {
+            mobileKeyboard.classList.remove("hidden");
+            phoneKeyboard.src = "assets/mobile/image-phone-and-keyboard.jpg";
+            glassKeyboard.src = "assets/mobile/image-glass-and-keyboard.jpg";
+          }
         }
-      }
 
-      // Call swapImages() initially and on window resize
-      swapImages();
-      window.addEventListener("resize", () => swapImages());
-    });
-  </script>
+        // Call swapImages() initially and on window resize
+        swapImages();
+        window.addEventListener("resize", () => swapImages());
+      });
+    </script>
+  </body>
 </html>
